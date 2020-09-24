@@ -49,6 +49,6 @@ const errorHandlers = expressErrorHandler({
 app.use(expressErrorHandler.httpError(404));
 app.use(errorHandlers);
 
-http.createServer(app).listen(app.get('port'), () => {
+http.createServer(app).listen(process.env.PORT||app.get('port'), () => {
     database_loader.init(app, config);
 });
