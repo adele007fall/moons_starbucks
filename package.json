@@ -36,7 +36,8 @@
     "nunjucks": "^3.2.2",
     "path": "^0.12.7",
     "pm2": "^4.4.1",
-    "prettier": "^2.1.2"
+    "prettier": "^2.1.2",
+    "pug": "^3.0.0"
   },
   "devDependencies": {
     "eslint": "^7.2.0",

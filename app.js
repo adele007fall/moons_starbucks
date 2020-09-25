@@ -2,7 +2,8 @@
 const express = require('express');
 const http = require('http');
 const path = require('path'); 
-
+// 넌적스
+const nunjucks = require('nunjucks');
 // 미들웨어 모듈
 const static = require('serve-static');
 const bodyParser = require('body-parser');
@@ -25,7 +26,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 // 포트넘버를 config 파일에서 정의한 포트넘버로 설정
-app.set('port', config.server_port || 3500);
+app.set('port', config.server_port || 8080);
 // cookie-parser
 app.use(cookieParser());
 // session option
@@ -37,9 +38,9 @@ app.use(
     })
 );
 // public folder 를 static으로 오픈
-app.use('/',static(path.join(__dirname, '/public')));
- 
-route_loader.init(app, express.Router()); 
+app.use(static(path.join(__dirname, '/public')));
+
+route_loader.init(app, express.Router());  
 
 const errorHandlers = expressErrorHandler({
     static: {
@@ -49,6 +50,6 @@ const errorHandlers = expressErrorHandler({
 app.use(expressErrorHandler.httpError(404));
 app.use(errorHandlers);
 
-http.createServer(app).listen(process.env.PORT||app.get('port'), () => {
+http.createServer(app).listen(app.get('port'), () => {
     database_loader.init(app, config);
 });
