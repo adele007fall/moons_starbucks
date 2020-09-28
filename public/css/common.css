@@ -19,22 +19,15 @@ body { line-height: 1.5; }
     src: url("../asset/font/GSB.otf") format("opentype");
 }
 header{
+    height: 2vh;
     transition: 0.5s;
 }
-header.header_scroll nav{
-    min-height: 8vh;
-    height: 8vh;
-} 
-header.header_scroll ul {
-    height: 8vh;
-    line-height: 8vh;
+.svg-inline--fa {
+    display: none;
 }
 header.header_scroll ul > li > a {
     padding: 0;
-}
-header.header_scroll  ul > li .depth2 {
-    top: 58px;
-}
+} 
 nav {
     transition: 0.3s;
     position: fixed;
@@ -43,7 +36,7 @@ nav {
     display: grid;
     padding: 0px 40px;
     grid-template-columns: 10% 10% 80%;
-    min-height: 10vh; 
+    min-height: 70px; 
 } 
 #logo { 
     text-indent: 9999px;
@@ -56,47 +49,77 @@ nav {
 ul {
     visibility: hidden;
     grid-column: 3;
-    height: 10vh;
-    line-height: 10vh;
+    height: 70px;
+    line-height: 70px;
     display: flex; 
     justify-content: flex-end;
     align-items: center; 
     transition: 0.5s;
     list-style: none;
 }
-.nav_menus > li:hover{ 
-    color: ;
+.nav_menus > li:hover{  
     background: #006341; 
 }
-ul > li>  a{
+ul > li > a.show {
+    background: #006341;  
+}
+ul > li > a {
     position: relative;
     display: inline-block;
-    width: 120px; 
+    width: 140px; 
     text-align: center;
     font-family:'gsm', serif ;
     color: #233630;
-} 
+}   
 .depth2 {
-    display: none;
-    /* display: grid; */
+    visibility: hidden;
+    display: grid;  
     grid-template-columns: 1fr 1fr 1fr 1fr;
     position: absolute;
-    top: 73px;
+    top: 70px;
     justify-items: center; 
     right: 0;
-    width: 50%;
+    width: 100%; 
+    height: 50px;
+    line-height: 50px;
     background: #006341;
-}
-.depth2 > li { 
-}
-.depth2 ul {
-    position: absolute;
+} 
+.depth2.show {
     visibility: visible;
-    background: white;
-    display: grid;
-    right: 0;
-    width: 200%;
+} 
+.depth2 > li {
+    width: 100%;
+    height: auto; 
 }
+.depth2 > li > a {
+    width: 100%;
+    height: auto;
+    display: inline-block; 
+    text-align: center;
+} 
+.depth3 {  
+    visibility: hidden;
+    position: absolute; 
+    display: block; 
+    right: 0;
+    flex-direction: column; 
+    justify-content: start;
+    align-items: flex-start; 
+    background: white; 
+    width: 200%;    
+    height: auto;
+}  
 .depth2 p > a {
     color: black;
+}
+@media (max-width: 767px){
+    .nav_menus {
+        display: none;
+    }
+    .svg-inline--fa {
+        display: block;
+        width: 1.375em !important; 
+        grid-column: 4;
+        height: 70px;
+    }
 }
