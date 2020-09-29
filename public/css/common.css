@@ -59,10 +59,7 @@ ul {
 }
 .nav_menus > li:hover{  
     background: #006341; 
-}
-ul > li > a.show {
-    background: #006341;  
-}
+} 
 ul > li > a {
     position: relative;
     display: inline-block;
@@ -70,10 +67,13 @@ ul > li > a {
     text-align: center;
     font-family:'gsm', serif ;
     color: #233630;
-}   
+} 
+.depth1:hover .depth2{ 
+    display: grid;
+}  
 .depth2 {
-    visibility: hidden;
-    display: grid;  
+    visibility: visible;
+    display: none;  
     grid-template-columns: 1fr 1fr 1fr 1fr;
     position: absolute;
     top: 70px;
@@ -83,34 +83,54 @@ ul > li > a {
     height: 50px;
     line-height: 50px;
     background: #006341;
-} 
-.depth2.show {
-    visibility: visible;
-} 
+}  
 .depth2 > li {
     width: 100%;
     height: auto; 
 }
 .depth2 > li > a {
+    color: rgb(241, 241, 241);
     width: 100%;
     height: auto;
     display: inline-block; 
     text-align: center;
 } 
-.depth3 {  
-    visibility: hidden;
-    position: absolute; 
-    display: block; 
-    right: 0;
-    flex-direction: column; 
+.depth2 li:hover .depth3 {
+    z-index: 10; 
+    height: 60vh;
+}
+.depth2 li:hover .depth3 li {
+    display: block;
+}
+.depth3 {
+    transition: .2s;
+    visibility: visible;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-auto-flow: row;
+    grid-template-areas: 
+    "li li . ."
+    ;
+    position: absolute;
+    right: 0; 
     justify-content: start;
     align-items: flex-start; 
-    background: white; 
+    background: #2d2926; 
     width: 200%;    
-    height: auto;
-}  
-.depth2 p > a {
-    color: black;
+    height: 0;
+}
+.depth3 li {
+    transition-delay: 2s;
+    transition: 1.5s;
+    display: none;
+    grid-column: 1; 
+}   
+.depth3 li:nth-child(even){
+    grid-column: 2;
+}
+.depth3 li a {
+    color: rgb(255 255 255 / .7);
 }
 @media (max-width: 767px){
     .nav_menus {
