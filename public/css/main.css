@@ -14,11 +14,14 @@ section {
     background: linear-gradient(to left, #233630, #223b35);
     z-index: -1;
 }
+.first_bg{
+
+    margin-top: 8vh;
+}
 .first_bg,.second_bg {
     background:#bedbd6;
     height: 70%;
     width: 90%;
-    margin-top: 8vh;
     position: relative;
 }
 .first_wrapper { 
@@ -49,3 +52,12 @@ section {
 }
 /* section1 end */
 /* section2 start */
+
+@media (max-width: 767px){ 
+    .main_text span:nth-of-type(1){
+        font-size: 28px;
+    }
+    .main_text span {
+        font-size: 20px;
+    }
+}
