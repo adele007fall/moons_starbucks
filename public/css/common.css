@@ -108,6 +108,14 @@ ul > li > a {
     display: inline-block; 
     text-align: center;
 } 
+.depth2 > li:after{
+    content: "";
+    position: absolute;
+    display: inline-block;
+    width: 1px; 
+    height: 80%;
+    background: #fcfcfc;
+}
 .depth2 li:hover .depth3 {
     z-index: 10; 
     height: 60vh;
@@ -143,7 +151,8 @@ ul > li > a {
     color: rgb(255 255 255 / .7);
 }
 .gnb_img{
-    transition: .5s;
+    transition-delay: 1s;
+    transition: 2.5s;
     visibility: hidden;
     display: none; 
     position: absolute;
@@ -171,29 +180,31 @@ ul > li > a {
 }
 .foot_btm {   
     grid-template-rows: repeat(2, 1fr);
-    height: 25vh;
+    height: 180px;
     display: grid; 
 }
 .policy ul {
     padding-top: 35px;
     visibility: visible; 
-    height: 15vh;
+    height: 100px;
     line-height: 30px;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     transition: 0.5s;
-}
+} 
 .policy li > a {
+    line-height: 0;
     font-size: 14px;
-    line-height: 22px;
     width: auto;
+    padding: 0;
 }
 .policy li > a:hover {
     font-family: 'gsb',serif;
 }
 .copys {
-    font-size: 14px;
+    font-size: 12px;
+    line-height: 20px;
     text-align: center;
     font-family: 'gsl', serif;
 }
@@ -201,25 +212,17 @@ i {
     font-size: 12px;
     font-style: normal;
 }
-@media (max-width: 1028px){
-    .foot_btm {   
-        height: 30vh;
-    }
+@media (max-width: 1028px){ 
     .policy ul{
-        padding-top: 30px;
+        padding-top: 15px;
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         align-content: start;
         text-align: center;
     }
     .copys {    
-        padding-top: 35px;
-        font-size: 14px;
-        line-height: 22px;
-    }
-    i {
-        font-size: 12px;
-    }
+        padding-top: 15px; 
+    } 
 }
 
 
@@ -301,39 +304,40 @@ i {
         display: block; 
         grid-column: 2;
         height: 70px;
-    }   
-    .foot_btm {
-        height: 35vh;
-    }
+    }    
     .policy ul{
-        padding-top: 30px;
+        padding-top: 1.5vh;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         align-content: start;
         text-align: center;
     }
     .copys{
-        font-size: 12px;
+        font-size: 1.2vh;
         line-height: 20px;
     }
     i {
-        font-size: 10px;
+        font-size: 1vh;
     }
 }
 @media (max-width: 500px){
     .foot_btm {
-        height: 30vh;
+        height: 200px;
     }
     .copys {
-        padding-top: 65px;
+        padding-top: 20px;
     }
     .copys p {
         display: none;
     }
     .policy ul{
         padding-top: 15px;
-        line-height: 22px; 
+        line-height: 22px;
+        height: 145px;
         grid-template-columns: repeat(1, 1fr);
+    }
+    .policy li {
+        line-height: 0;
     }
     .policy li > a {
         font-size: 12px;

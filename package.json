@@ -28,6 +28,8 @@
     "express": "^4.17.1",
     "express-error-handler": "^1.1.0",
     "express-session": "^1.17.1",
+    "gsap": "^3.5.1",
+    "lodash": "^4.17.20",
     "mongodb": "^3.6.1",
     "mongoose": "^5.10.4",
     "morgan": "^1.10.0",

@@ -43,9 +43,7 @@ app.use(static(path.join(__dirname, '/public')));
 route_loader.init(app, express.Router());  
 
 const errorHandlers = expressErrorHandler({
-    static: {
-        '404': path.join(__dirname, '/404.html')
-    }
+    static: { '404': path.join(__dirname, '/404.html') }
 });
 app.use(expressErrorHandler.httpError(404));
 app.use(errorHandlers);
