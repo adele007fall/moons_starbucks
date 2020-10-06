@@ -35,10 +35,13 @@ nav {
     width: 100%;
     display: grid;
     padding: 0px 40px;
-    grid-template-columns: 10% 10% 80%;
+    grid-template-columns: 10% 20% 70%;
     min-height: 70px; 
 } 
 #logo { 
+    display: flex;
+    align-items: center;
+    justify-content: left;
     text-indent: 9999px; 
     grid-column: 1;
     transition: 0.5s;
@@ -51,6 +54,12 @@ nav {
     background: url(../asset/img/logo.png) no-repeat center/contain;
 
 }
+#nav > span:first-of-type {
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 28px;
+} 
 ul {
     visibility: hidden;
     grid-column: 3;
@@ -112,7 +121,9 @@ ul > li > a {
     content: "";
     position: absolute;
     display: inline-block;
-    width: 1px; 
+    width: 1px;
+    opacity: .2;
+    top: 10%;
     height: 80%;
     background: #fcfcfc;
 }
@@ -173,10 +184,19 @@ ul > li > a {
 }
 /* footer */
 #footer{
+    position: relative;
     width: 100%;
     display: grid;
     padding: 0px 40px; 
     background: #f1f1f1;
+}
+#footer::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 1px; 
+    background: #2d2926;
+    opacity: .2;
 }
 .foot_btm {   
     grid-template-rows: repeat(2, 1fr);
@@ -213,6 +233,9 @@ i {
     font-style: normal;
 }
 @media (max-width: 1028px){ 
+    #nav > span:first-of-type{
+        display: none;
+    }
     .policy ul{
         padding-top: 15px;
         display: grid;
@@ -227,6 +250,7 @@ i {
 
 
 @media (max-width: 767px){
+    
     nav{grid-template-columns: 1fr;}
     .nav_menus {
         display: none;
@@ -260,6 +284,9 @@ i {
         height: auto;
         position: static;
     } 
+    .depth2 > li:after{
+        content: unset;
+    }
     .depth2 > li > a {
         color: rgb(241, 241, 241); 
         padding-left: 30px; 
@@ -305,14 +332,23 @@ i {
         grid-column: 2;
         height: 70px;
     }    
-    .policy ul{
-        padding-top: 1.5vh;
+    /* footer */
+    .foot_btm {
+        padding: 20px 0; 
+        height: 220px; 
+    }
+    .policy ul{ 
+        padding-top: 0px;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         align-content: start;
         text-align: center;
     }
+    .policy li > a { 
+        font-size: 12px;
+    }
     .copys{
+        padding-top: 30px;
         font-size: 1.2vh;
         line-height: 20px;
     }
@@ -321,7 +357,10 @@ i {
     }
 }
 @media (max-width: 500px){
+    
+    nav{padding: 0 20px;}
     .foot_btm {
+        padding: 0;
         height: 200px;
     }
     .copys {
