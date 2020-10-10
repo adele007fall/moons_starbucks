@@ -17,7 +17,7 @@ body { line-height: 1.5; }
 @font-face{
     font-family: gsb;
     src: url("../asset/font/GSB.otf") format("opentype");
-}
+} 
 header{
     height: 2vh;
     transition: 0.5s;
@@ -73,8 +73,9 @@ ul {
 }
 .nav_menus > li:hover{  
     background: #006341; 
-} 
+}  
 ul > li > a {
+    transition: .2s;
     position: relative;
     display: inline-block;
     width: 140px; 
@@ -85,6 +86,19 @@ ul > li > a {
 .depth1:hover .depth2{ 
     display: grid;
 }  
+.depth1:hover > a{
+    color: white;
+    position: relative;
+}
+.depth1:hover > a::after {
+    bottom: 0;
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 1px;
+    left: 10%;
+    background: white;
+}
 .depth1:nth-of-type(2) .depth2 > li {
     grid-column : 4;
 }
@@ -110,6 +124,9 @@ ul > li > a {
     width: 100%;
     height: auto; 
 }
+.depth2 > li:hover > a {
+    color: white;
+}
 .depth2 > li > a {
     color: rgb(241, 241, 241);
     width: 100%;
@@ -126,18 +143,16 @@ ul > li > a {
     top: 10%;
     height: 80%;
     background: #fcfcfc;
-}
+} 
 .depth2 li:hover .depth3 {
     z-index: 10; 
     height: 60vh;
-}
-.depth2 li:hover .depth3 li {
-    display: block; 
-}
-.depth3 {
+    display: grid;
+} 
+.depth3 { 
     z-index: 20; 
     visibility: visible;
-    display: grid;
+    display: none;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: repeat(5, 1fr);
     grid-auto-flow: row;
@@ -150,9 +165,9 @@ ul > li > a {
     width: 200%;    
     height: 0;
 }
-.depth3 li {    
-    text-align: center;
-    display: none;
+.depth3 li {   
+    transition: .5s; 
+    text-align: center; 
     grid-column: 1; 
 }   
 .depth3 li:nth-child(even){
@@ -160,6 +175,9 @@ ul > li > a {
 }
 .depth3 li a { 
     color: rgb(255 255 255 / .7);
+}
+.depth3 li:hover a { 
+    color: rgb(255 255 255 / 1);
 }
 .gnb_img{
     transition-delay: 1s;
@@ -218,9 +236,10 @@ ul > li > a {
     font-size: 14px;
     width: auto;
     padding: 0;
+    color: rgba(0,0,0,.5);
 }
-.policy li > a:hover {
-    font-family: 'gsb',serif;
+.policy li > a:hover {  
+    color: rgba(0,0,0,1);
 }
 .copys {
     font-size: 12px;
@@ -250,10 +269,15 @@ i {
 
 
 @media (max-width: 767px){
-    
+    .line_second {
+        display: none;
+    }
     nav{grid-template-columns: 1fr;}
     .nav_menus {
         display: none;
+    }
+    .nav_menus > li:hover{
+        background: white;
     }
     .aside_nav{
         overflow-y: scroll;
@@ -274,10 +298,13 @@ i {
         width: 20%;
         height: 100%;
         background: rgba(0,0,0,.5);
-    }
+    } 
     ul > li > a{
         padding-left: 20px; 
         text-align: left;
+    }
+    .depth1:hover > a {
+        color: black;
     }
     .depth1:hover .depth2{
         display: block;
@@ -292,29 +319,31 @@ i {
         padding-left: 30px; 
         display: inline-block;
         text-align: left;
-    }
-    .depth3 {
-        display: block;
-        position: static;
-        width: auto;
-    }
+    } 
+    .depth3 {grid: none;}
     .depth3 li{
+        display: none;
         text-align: left;
+        grid-column: none;
+    }
+    .depth3 li:nth-child(even){
+        grid-column: none; 
     }
     .depth2 li:hover .depth3{
+        display: block;
         z-index: 10;
         height: 0;
-    }
-    .depth2 li:hover .depth3 li{
-        display: none;
-    }
+    } 
     .depth3 li a {
         padding-left: 40px;
         width: 170px; 
         font-size: 14px;
     }
     .aside_depth .depth3{ 
+        display: block;
         height: auto !important;
+        grid: none;
+        position: static;
     }
     .aside_depth .depth3 li{
         display: block !important;

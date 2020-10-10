@@ -14,7 +14,7 @@ const timeline = new TimelineMax();
 timeline.fromTo(first_bg,1, {height: "0%"}, {height: "70%", ease: Power2.easeInout});
 timeline.fromTo(first_bg, 1.2, {width: "100%"}, {width: "90%", ease: Power2.easeInout} )
 timeline.fromTo(slider, 1.2, {x: "-100%"}, {x: "0%", ease: Power2.easeInout}, "-=1.2" )
-timeline.fromTo(nav, 0.5, {background: "none"}, {background: "#f1f1f1", ease: Power2.easeInout}, "-=0.5" );
+timeline.fromTo(nav, 0.5, {background: "none"}, {background: "#f1f1f1", boxShadow: "2px 2px 2px rgba(0,0,0,0.2)", ease: Power2.easeInout}, "-=0.5" );
 timeline.fromTo(nav_menus, 0.2, {}, {visibility: "visible", ease: Power2.easeInout}, "-=0.2" );
 timeline.fromTo(nav_span, 0.1, { x: "-150%"}, {opacity: 1, x: 0}, "-=0.1" );
 timeline.fromTo(logo, 0.2, { x: "-100%"}, {opacity: 1, x: 0}, "-=0.2" );
@@ -70,19 +70,15 @@ burger.addEventListener('mouseenter', function(){
     }
     tl.staggerTo(lines, .25, {scaleX: 1.5, repeat: 1, yoyo: true, svgOrigin: "50 50"}, "-=0.25")
 })
-toggleMenu
-.to(line_2, .125,{scaleX:0})
-.to(line_1, .125,{rotation:45, transformOrigin: "50% 50%", y: 8}, "+=.125")
-.to(line_3, .125,{rotation: -45,transformOrigin: "50% 50%", y: -8}, "+=.125")
-.to(burger, .5, {rotation:360, ease: Power4.easeInout});
+toggleMenu.to(line_2, .125,{scaleX:0}).to(line_1, .125,{rotation:45, transformOrigin: "50% 50%", y: 8}, "+=.125").to(line_3, .125,{rotation: -45,transformOrigin: "50% 50%", y: -8}, "+=.125").to(burger, .5, {rotation:360, ease: Power4.easeInout});
 burger.addEventListener('click', function(){
     burger.classList.toggle('opend');
     nav_menus.classList.toggle('aside_nav')
     toggleMenu.reversed()?toggleMenu.play():toggleMenu.reverse();
 })
-
-const depth2s =document.querySelectorAll('.depth2 li');
-const depth3 =document.querySelector('.depth3'); 
+//aside depth 
+const depth2s = document.querySelectorAll('.depth2 > li');
+const depth3 = document.querySelector('.depth3'); 
 depth2s.forEach(function(depth2){ 
     depth2.addEventListener('click',function(){
         depth2.classList.toggle('aside_depth'); 
