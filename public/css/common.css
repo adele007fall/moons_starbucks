@@ -95,6 +95,7 @@ ul > li > a {
     content: "";
     position: absolute;
     width: 80%;
+    opacity: .5;
     height: 1px;
     left: 10%;
     background: white;

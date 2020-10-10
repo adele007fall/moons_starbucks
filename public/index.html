@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="shortcut icon" href="#" />  
     <link rel="stylesheet" href="/css/splide.min.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="/css/common.css" />
     <link rel="stylesheet" href="/css/main.css" />
     <title>Starbucks Coffee Moongoodstone</title>
@@ -233,29 +234,29 @@
       <section>
         <div class="second_bg">
           <div class="second_wrapper">
-            <div class="steps_text">
+            <div class="steps_text" data-aos="fade-left" data-aos-once="once" data-aos-anchor-placement="top-center">
               <span>별을 모아보세요.</span>
               <span>30개의 별이 모이면 골드레벨이 됩니다.</span>
               <span>아래의 단계에 따라 레벨을 올려보세요</span>
             </div>
             <div class="steps">
-              <div>
+              <div data-aos="fade-right" data-aos-delay="50" data-aos-once="once">
                 <span>1</span>
                 <p>Welcome</p>
                 <p>회원가입 후 스타벅스 카드를 등록하세요!</p>
               </div>
-              <div>
+              <div data-aos="fade-right" data-aos-delay="150" data-aos-once="once">
                 <span>2</span>
                 <p>Green</p>
                 <p>다섯개의 별을 모아 green level이 되어보세요!</p>
               </div>
-              <div>
+              <div data-aos="fade-right" data-aos-delay="200" data-aos-once="once">
                 <span>3</span>
                 <p>Gold</p>
                 <p>별 12개가 모이면 free drink가 제공 됩니다!</p>
               </div>
             </div>
-            <div class="splide" id="splide" >
+            <div class="splide" id="splide" data-aos="fade-up">
                 <div class="splide__track"> 
                     <ol class="splide__list slide" > 
                         <li class="splide__slide">
@@ -319,8 +320,8 @@
         </div>
       </section>
       <!-- <section>
-        <div class="second_bg">
-          <div class="second_wrapper"></div>
+        <div class="third_bg">
+          <div class="third_wrapper"></div>
         </div>
       </section> -->
     </main>
@@ -360,6 +361,10 @@
       integrity="sha512-znL7NlNFFvWYptamSie8oZKRUwq+60RJtn8lkeTCFA6wpBr6ViJwabt1f15JcpiNaxhy8tixwCRFVR7kTyfJXA=="
       crossorigin="anonymous"
     ></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <script src="/js/splide.min.js"></script>
     <script src="/js/index.js"></script>
     <script src="/js/main.js"></script>
