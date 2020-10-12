@@ -1,4 +1,7 @@
-
+body{
+    font-family: 'gsm', serif;
+    color: #666;
+}
 /* section1 start */
 section {
     overflow: hidden;

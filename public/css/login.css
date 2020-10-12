@@ -1,4 +1,6 @@
 body{
+    font-family: 'gsm', serif;
+    color: #666;
     position: relative;
     background: url(../asset/img/user_bg.jpg) no-repeat center/cover;
 }
@@ -15,6 +17,8 @@ section {
     z-index: 1;
 }
 .user_bg {
+    flex-direction: column;
+    display: flex;
     overflow: hidden;
     width: 460px;
     height: 80vh;
@@ -25,8 +29,11 @@ section {
     justify-content: center;
     align-items: center;
 }
-.user_bg form:first-of-type { 
-    padding-top: 120px;
+.user_bg p {
+    font-size: 18px;
+    padding-bottom: 20px;
+}
+.user_bg form:first-of-type {  
     padding-bottom: 50px;
     display: flex;
     width: auto;
@@ -39,7 +46,8 @@ section {
     text-indent: -9999px;
     display: none;
 }
-.user_bg form input {
+.user_bg form input { 
+    font-family: 'gsl', serif;
     border-radius: 4px; 
     border: none;
     width: 260px;
@@ -51,7 +59,8 @@ section {
     cursor: pointer;
     padding: 0;
     color: #006341;
-    border: 1px solid #006341;
+    border: 1px solid #006341; 
+    font-family: 'gsm', serif;
 }
 .user_bg form input:last-of-type:hover {
     background: #006341;
