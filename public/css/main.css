@@ -1,6 +1,7 @@
 
 /* section1 start */
 section {
+    overflow: hidden;
     display: flex;
     height: 100vh;
     justify-content: center;

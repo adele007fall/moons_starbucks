@@ -281,6 +281,7 @@ i {
         background: white;
     }
     .aside_nav{
+        overflow-x: hidden;
         overflow-y: scroll;
         display: block;
         position: fixed;
@@ -289,13 +290,14 @@ i {
         height: 100vh;
         width: 80%;
         background: white;
+        z-index: 1;
     }
     .aside_nav::before{
         content: "";
         display: block;
         position: fixed;
         right: 0;
-        z-index: 6; 
+        z-index: 0; 
         width: 20%;
         height: 100%;
         background: rgba(0,0,0,.5);
@@ -345,6 +347,7 @@ i {
         height: auto !important;
         grid: none;
         position: static;
+        width: 100%;
     }
     .aside_depth .depth3 li{
         display: block !important;
