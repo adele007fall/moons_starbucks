@@ -13,12 +13,23 @@ var login = function (req, res) {
                 res.end();
                 return;
             }
-            if (result) {
-                var username = result[0].name;
-                res.writeHead('200', { "Content-Type": 'text/html; charset=utf8' });
-                res.write(`<h1>${username}님 반갑습니다.</h1>`)
-                res.write(`<a href="/public/login.html">retry</a>`)
-                res.end();
+            if (result) { 
+                res.writeHead(200,{'Content-Type': 'text/html; charset=utf8'})
+                var context = {
+                    userid: paramID,
+                    username: result[0].name
+                }
+                req.app.render('login', context, function(err, html){
+                    if(err){
+                        console.log(err.stack);
+                        res.writeHead('200', { 'Content-Type': 'text/html; charset=utf8' });
+                        res.write(`<h2>정보조회실패</h2>`) 
+                        res.write(`<p>데이터 베이스에 연결하지 못하였습니다.</p>`)
+                        res.end();
+                        return;
+                    } 
+                    res.end(html);
+                });
             } else {
                 res.writeHead('200', { 'Content-Type': 'text/html; charset=utf8' });
                 res.write(`<h1>로그인 실패</h1>`)

@@ -2,6 +2,7 @@
 const express = require('express');
 const http = require('http');
 const path = require('path'); 
+const ejs = require('ejs');
 // 넌적스
 const nunjucks = require('nunjucks');
 // 미들웨어 모듈
@@ -17,6 +18,7 @@ const Session = require('express-session');
 const config = require('./config');
 const database_loader = require('./database/database_loader');
 const route_loader = require('./route/route_loader');
+const { Router } = require('express');
 
 // 기본속성 설정
 const app = express();
@@ -37,8 +39,12 @@ app.use(
         saveUninitialized: 'true'
     })
 );
+// ejs engine 
+app.set('view engine', 'ejs'); 
+
 // public folder 를 static으로 오픈
 app.use(static(path.join(__dirname, '/public')));
+
 
 route_loader.init(app, express.Router());  
 

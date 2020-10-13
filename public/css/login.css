@@ -85,3 +85,18 @@ section {
     height: 1px;
     background: #0c0c0c;
 }
+@media (max-width: 500px){  
+    .user_bg{
+        height: 70vh;
+        width: 310px;
+    }
+    .user_bg p{
+        font-size: 16px;
+    }
+    .user_bg form input{
+        width: 240px;
+    }
+    .user_bg form input{
+        font-size: 12px;
+    }
+}
