@@ -31,11 +31,18 @@ var login = function (req, res) {
                     res.end(html);
                 });
             } else {
-                res.writeHead('200', { 'Content-Type': 'text/html; charset=utf8' });
-                res.write(`<h1>로그인 실패</h1>`)
-                res.write(`<p>비밀번호를 확인해주세요.</p>`)
-                res.write(`<a href="/login.html">retry</a>`)
-                res.end();
+                res.writeHead('200', { 'Content-Type': 'text/html; charset=utf8' }); 
+                req.app.render('logfail', function(err, html){
+                    if(err){
+                        console.log(err.stack);
+                        res.writeHead('200', { 'Content-Type': 'text/html; charset=utf8' });
+                        res.write(`<h2>정보조회실패</h2>`) 
+                        res.write(`<p>데이터 베이스에 연결하지 못하였습니다.</p>`)
+                        res.end();
+                        return;
+                    } 
+                    res.end(html);
+                }); 
             }
         })
     } else {
@@ -63,10 +70,26 @@ var adduser = function (req, res) {
             }
             if (add) {
                 console.dir(add);
-                res.writeHead('200', { "Content-Type": 'text/html; charset=utf8' });
-                res.write(`<h1>사용자가 추가 되었습니다.</h1>`)
-                res.write(`<p>${name}</p>`)
-                res.end();
+                res.writeHead(200,{'Content-Type': 'text/html; charset=utf8'})
+                var context = {
+                    userid: paramID,
+                    username: result[0].name
+                }
+                req.app.render('adduser', context, function(err, html){
+                    if(err){
+                        console.log(err.stack);
+                        res.writeHead('200', { 'Content-Type': 'text/html; charset=utf8' });
+                        res.write(`<h2>정보조회실패</h2>`) 
+                        res.write(`<p>데이터 베이스에 연결하지 못하였습니다.</p>`)
+                        res.end();
+                        return;
+                    } 
+                    res.end(html);
+                });
+                // res.writeHead('200', { "Content-Type": 'text/html; charset=utf8' });
+                // res.write(`<h1>사용자가 추가 되었습니다.</h1>`)
+                // res.write(`<p>${name}</p>`)
+                // res.end();
             } else {
                 res.writeHead('200', { "Content-Type": 'text/html; charset=utf8' });
                 res.write(`<h1>사용자 추가 실패</h1>`)

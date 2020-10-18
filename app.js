@@ -14,7 +14,7 @@ const errorHandler = require('errorhandler');
 const expressErrorHandler = require('express-error-handler');
 // session 미들웨어 모듈
 const Session = require('express-session');
-// 설정을 위한 config 파일과 데이터베이스, 라우트 모듈
+// 설정을 위한 config 파일과 데이터베이스, 라우트 모듈 
 const config = require('./config');
 const database_loader = require('./database/database_loader');
 const route_loader = require('./route/route_loader');
@@ -40,8 +40,9 @@ app.use(
     })
 );
 // ejs engine 
-app.set('view engine', 'ejs'); 
-
+app.set('views', path.join(__dirname, 'views'));
+app.set('view engine', 'ejs');  
+app.engine('html', require('ejs').renderFile);
 // public folder 를 static으로 오픈
 app.use(static(path.join(__dirname, '/public')));
 

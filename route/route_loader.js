@@ -2,7 +2,7 @@ const route_loader = {};
 const config = require('../config');
 
 route_loader.init = (app, router)=>{
-    console.log('route_lodaer.init called');
+    // console.log('route_lodaer.init called');
     initRoutes(app, router);
 }
 function initRoutes(app, router){

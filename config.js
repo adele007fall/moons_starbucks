@@ -9,5 +9,7 @@ module.exports = {
         {file: './user', path: '/process/login', method:'login',type:'post'},
         {file: './user', path: '/process/adduser', method:'adduser',type:'post'},
         {file: './user', path: '/process/userlist', method:'userlist',type:'post'},
+        {file: './menus', path: '/menus', method:'menus', type:'get'},
+        {file: './menus', path: '/menus/drink', method:'menus', type:'get'},
     ]
 }

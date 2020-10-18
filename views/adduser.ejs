@@ -1,4 +1,13 @@
- 
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="/css/common.css">
+    <link rel="stylesheet" type="text/css" href="/css/ejs_1.css">
+    <title>join</title>
+</head>
+<header>
     <nav id="nav">
       <h1 id="logo"><a href="index.html">starbucks</a></h1>
       <span>Starbucks</span>
@@ -198,4 +207,41 @@
         <li class="depth1"><a href="/login.html">Log in</a></li>
         <li class="depth1"><a href="/adduser.html">Sign in</a></li>
       </ul> 
-    </nav> 
+    </nav>
+</header> 
+<body>
+    <main>
+        <section>
+            <p><%= username %>님 성공적으로 회원가입 되었습니다.</p>
+            <a href="/public/login.html">retry</a> 
+        </section>
+    </main> 
+    <footer>
+        <div id="footer">
+            <div class="foot_top"> 
+            </div>
+            <div class="foot_btm">
+                <div class="policy">
+                    <ul>
+                        <li><a href="">개인정보 처리방침</a></li>
+                        <li><a href="">영상정보처리기기 운영관리 방침</a></li>
+                        <li><a href="">홈페이지 이용약관</a></li>
+                        <li><a href="">위치정보 이용약관</a></li>
+                        <li><a href="">스타벅스 카드 이용약관</a></li>
+                        <li><a href="">비회원 이용약관</a></li>
+                        <li><a href="">윤리경영 방침</a></li> 
+                    </ul>
+                </div>
+                <div class="copys"> 
+                    <p>사업자등록번호 : 201-81-21515 (주)스타벅스커피 코리아 대표이사 : 송 데이비드 호섭 TEL : 1522-3232 개인정보 책임자 : 장석현</p>
+                    <i>ⓒ 2020 Starbucks Coffee Company. All Rights Reserved.</i>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js" integrity="sha512-IQLehpLoVS4fNzl7IfH8Iowfm5+RiMGtHykgZJl9AWMgqx0AmJ6cRWcB+GaGVtIsnC4voMfm8f2vwtY+6oPjpQ==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/timelinejs/3.6.6/js/timeline-min.js" integrity="sha512-znL7NlNFFvWYptamSie8oZKRUwq+60RJtn8lkeTCFA6wpBr6ViJwabt1f15JcpiNaxhy8tixwCRFVR7kTyfJXA==" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.14.0/js/all.js" integrity="sha384-3Nqiqht3ZZEO8FKj7GR1upiI385J92VwWNLj+FqHxtLYxd9l+WYpeqSOrLh0T12c" crossorigin="anonymous"></script>
+    <script src="/js/index.js"></script>
+</body>
+</html>
